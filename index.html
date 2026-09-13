@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crash Tiles – Eğlenceli Meyve Eşleştirme Oyunu</title>
+  <meta name="description" content="Crash Tiles: Taze meyveleri, sebzeleri ve bonus taşları 3D katmanlardan eşleştir, IQ seviyeni yükselt ve zamana karşı yarış!">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crash Tiles – Eğlenceli Meyve Eşleştirme Oyunu">
+  <meta property="og:description" content="Stratejik meyve eşleştirme bulmaca oyunu. Taze meyveler, +1 bonus süre taşları ve IQ seviye takibiyle sınırlarını zorla!">
+  <meta property="og:image" content="assets/fruit_mockup.jpg">
+
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <img src="assets/icon.png" alt="Crash Tiles Icon">
+        <span>Crash Tiles</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Özellikler</a></li>
+        <li><a href="#minigame">Canlı Demo</a></li>
+        <li><a href="#howtoplay">Nasıl Oynanır</a></li>
+        <li><a href="tr/support.html">Destek</a></li>
+        <li><a href="tr/privacy.html">Gizlilik</a></li>
+      </ul>
+      <div class="lang-switch">
+        <a href="index.html" class="lang-btn active">TR</a>
+        <a href="en/index.html" class="lang-btn">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Actual Game Screenshot -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>🍐 TAZEMEYVE & SEBZE EŞLEŞTİRME</span>
+        </div>
+        <h1 class="hero-title">Meyveleri Eşleştir, Süreni Uzat, IQ Seviyeni Yükselt!</h1>
+        <p class="hero-description">
+          Crash Tiles, taze armut, avokado, karpuz ve salatalıkları 3D katmanlı tahtadan eşleştirerek zihnini ve reflekslerini test ettiğin bağımlılık yapıcı bir bulmaca oyunudur.
+        </p>
+        <div class="cta-group">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-primary">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.53c.64-.78 1.08-1.85.96-2.93-.93.04-2.07.62-2.74 1.4-.6.7-.1.13-1.85 1.01-2.93.99-.02 2.15.54 2.77-1.4.67-.79 1.13-1.88.98-2.93z"/></svg>
+            App Store'dan İndir
+          </a>
+          <a href="#minigame" class="btn-secondary">
+            <span>🎮 Hemen Dene</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-mockup-wrapper">
+          <img src="assets/game_screenshot.png" alt="Crash Tiles Actual Game Screenshot" class="hero-mockup-img">
+        </div>
+        <div class="hero-stat-floating top-right">
+          <span class="stat-icon">🧠</span>
+          <div class="stat-info">
+            <h4>SEVİYE 1 · IQ 70</h4>
+            <p>Anlık IQ Ölçümü</p>
+          </div>
+        </div>
+        <div class="hero-stat-floating bottom-left">
+          <span class="stat-icon">⚡</span>
+          <div class="stat-info">
+            <h4>+1 EK SÜRE</h4>
+            <p>Bonus Taş Eşleşmesi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Mini Game Demo matching actual gameplay -->
+  <section id="minigame" class="minigame-section">
+    <div class="section-header">
+      <span class="section-tag">CANLI ETKİLEŞİM</span>
+      <h2 class="section-title">Web Sayfasında Meyveleri Eşleştir!</h2>
+      <p class="section-subtitle">Taşlara dokunarak hazneye al, 2 aynı meyveyi yan yana getirip temizle!</p>
+    </div>
+
+    <div class="minigame-container glass-panel">
+      <div class="minigame-header">
+        <div class="game-stat-pill">Skor: <span id="demoScore">300</span></div>
+        <div class="game-stat-pill">Kombo: <span id="demoCombo">-</span></div>
+        <div class="game-stat-pill">IQ: <span id="demoIQ">70</span></div>
+        <button id="resetDemoBtn" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">🔄 Yeniden Başlat</button>
+      </div>
+
+      <div class="felt-board">
+        <div id="demoTilesGrid" class="tiles-grid">
+          <!-- Generated dynamically via app.js -->
+        </div>
+      </div>
+
+      <!-- 4 Tray slots matching game header 3/4 -->
+      <div class="tray-bar">
+        <div class="tray-slot"></div>
+        <div class="tray-slot"></div>
+        <div class="tray-slot"></div>
+        <div class="tray-slot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section matching gameplay -->
+  <section id="features" class="features-section">
+    <div class="section-header">
+      <span class="section-tag">OYUN ÖZELLİKLERİ</span>
+      <h2 class="section-title">Neden Crash Tiles Oynamalısın?</h2>
+      <p class="section-subtitle">Zengin meyve çeşitleri, canlı grafikler ve heyecanlı bonus mekanikleri.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">🍐</div>
+        <h3 class="feature-title">Renkli Meyve & Sebzeler</h3>
+        <p class="feature-desc">Armut, avokado, karpuz, salatalık, muz, biber ve ananas ile dolu canlı 3D taşlar.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">⚡</div>
+        <h3 class="feature-title">+1 Ek Süre Bonus Taşları</h3>
+        <p class="feature-desc">+1 simgeli taşları haznenize alıp eşleştirerek geri sayıma ek saniyeler kazanın.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">🟣</div>
+        <h3 class="feature-title">Gizli Kapalı Taşlar</h3>
+        <p class="feature-desc">Üzerinde ışıltı bulunan mor kapalı taşlara dokunarak altındaki sürpriz meyveleri açın.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">🧠</div>
+        <h3 class="feature-title">Anlık IQ Seviye Takibi</h3>
+        <p class="feature-desc">Eşleştirme hızınıza ve hafızanıza göre dinamik olarak hesaplanan IQ puanınızı yükseltin.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">🔀</div>
+        <h3 class="feature-title">Karıştır (Shuffle) & Geri Al</h3>
+        <p class="feature-desc">Kilitlendiğiniz anlarda 2 Karıştırma ve 2 Geri Alma hakkınızı kullanarak hamlenizi kurtarın.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">⏱️</div>
+        <h3 class="feature-title">Zamana Karşı Yarış</h3>
+        <p class="feature-desc">Yeşil süre çubuğu tükenmeden tahtadaki tüm taşları hazneye alıp patlatın.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Play Section -->
+  <section id="howtoplay" class="howtoplay-section">
+    <div class="section-header">
+      <span class="section-tag">ÖĞRETİCİ</span>
+      <h2 class="section-title">Nasıl Oynanır?</h2>
+      <p class="section-subtitle">Meyveleri eşleştirmek için izlemen gereken 5 kolay adım.</p>
+    </div>
+
+    <div class="steps-container">
+      <div class="step-card glass-panel">
+        <div class="step-number">1</div>
+        <div class="step-icon">⭐</div>
+        <h3 class="step-title">Skor Yap</h3>
+        <p class="step-desc">Eşleşen her meyve çiftiyle puanını katla.</p>
+      </div>
+
+      <div class="step-card glass-panel">
+        <div class="step-number">2</div>
+        <div class="step-icon">🚩</div>
+        <h3 class="step-title">Seviye İlerle</h3>
+        <p class="step-desc">Seviye 1'den başlayıp zorlaşan tahtaları temizle.</p>
+      </div>
+
+      <div class="step-card glass-panel">
+        <div class="step-number">3</div>
+        <div class="step-icon">🧠</div>
+        <h3 class="step-title">IQ Yükselt</h3>
+        <p class="step-desc">Hızlı ve hatasız hamlelerle IQ puanını arttır.</p>
+      </div>
+
+      <div class="step-card glass-panel">
+        <div class="step-number">4</div>
+        <div class="step-icon">⏱️</div>
+        <h3 class="step-title">Süreyi Uzat</h3>
+        <p class="step-desc">+1 bonus taşları eşleştirerek ek zaman kazan.</p>
+      </div>
+
+      <div class="step-card glass-panel">
+        <div class="step-number">5</div>
+        <div class="step-icon">👆</div>
+        <h3 class="step-title">Hazneyi Yönet</h3>
+        <p class="step-desc">Hazneyi doldurmadan 2 aynı meyveyi yan yana getir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Section -->
+  <section class="showcase-banner">
+    <div class="showcase-container glass-panel">
+      <div class="showcase-text">
+        <span class="section-tag">GÖRSEL ŞÖLEN</span>
+        <h2 class="section-title" style="font-size: 2.2rem; margin-top: 10px;">Lezzetli & Rahatlatıcı Eşleştirme</h2>
+        <p class="section-subtitle" style="margin-bottom: 24px;">
+          Yeşil çuha zemin, parlak beyaz taşlar ve taze meyve ikonlarıyla tasarlanmış benzersiz iOS oyunu.
+        </p>
+        <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-primary">
+          Crash Tiles'ı Ücretsiz İndir
+        </a>
+      </div>
+      <div class="showcase-img-wrapper">
+        <img src="assets/fruit_mockup.jpg" alt="Crash Tiles Fruit Gameplay Graphics">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="assets/icon.png" alt="Crash Tiles Logo">
+        <span>Crash Tiles</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="tr/support.html">Destek (TR)</a></li>
+        <li><a href="en/support.html">Support (EN)</a></li>
+        <li><a href="tr/privacy.html">Gizlilik Politikası (TR)</a></li>
+        <li><a href="en/privacy.html">Privacy Policy (EN)</a></li>
+        <li><a href="https://github.com/hdurmus/tamgatiles/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+      </ul>
+      <p class="footer-copyright">
+        © 2026 Crash Tiles. Tüm hakları saklıdır. Designed with ❤️ for iOS.
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

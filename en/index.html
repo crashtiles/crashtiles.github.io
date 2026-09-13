@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crash Tiles – Delicious Fruit Matching Puzzle Game</title>
+  <meta name="description" content="Crash Tiles: Match fresh fruits, vegetables, and +1 bonus tiles in 3D towers, boost your IQ level, and race against the timer!">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crash Tiles – Fruit Matching Game">
+  <meta property="og:description" content="Strategic fruit & produce tile-matching puzzle game. Challenge your speed with fresh fruit tiles, bonus time boosts, and real-time IQ meter!">
+  <meta property="og:image" content="../assets/fruit_mockup.jpg">
+
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <img src="../assets/icon.png" alt="Crash Tiles Icon">
+        <span>Crash Tiles</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#minigame">Live Demo</a></li>
+        <li><a href="#howtoplay">How to Play</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+      <div class="lang-switch">
+        <a href="../index.html" class="lang-btn">TR</a>
+        <a href="index.html" class="lang-btn active">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Actual Game Screenshot -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>🍐 FRESH FRUIT & PRODUCE MATCHING</span>
+        </div>
+        <h1 class="hero-title">Match Fruits, Extend Time, Elevate Your IQ!</h1>
+        <p class="hero-description">
+          Crash Tiles is an addictive tile-matching puzzle game where you match fresh pears, avocados, watermelons, and cucumbers across 3D layered boards to test your memory and reflexes.
+        </p>
+        <div class="cta-group">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-primary">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.53c.64-.78 1.08-1.85.96-2.93-.93.04-2.07.62-2.74 1.4-.6.7-.1.13-1.85 1.01-2.93.99-.02 2.15.54 2.77-1.4.67-.79 1.13-1.88.98-2.93z"/></svg>
+            Download on App Store
+          </a>
+          <a href="#minigame" class="btn-secondary">
+            <span>🎮 Try Demo</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-mockup-wrapper">
+          <img src="../assets/game_screenshot.png" alt="Crash Tiles Actual Game Screenshot" class="hero-mockup-img">
+        </div>
+        <div class="hero-stat-floating top-right">
+          <span class="stat-icon">🧠</span>
+          <div class="stat-info">
+            <h4>LEVEL 1 · IQ 70</h4>
+            <p>Real-time IQ Meter</p>
+          </div>
+        </div>
+        <div class="hero-stat-floating bottom-left">
+          <span class="stat-icon">⚡</span>
+          <div class="stat-info">
+            <h4>+1 BONUS TIME</h4>
+            <p>Produce Time Boost</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Mini Game Demo matching actual gameplay -->
+  <section id="minigame" class="minigame-section">
+    <div class="section-header">
+      <span class="section-tag">INTERACTIVE DEMO</span>
+      <h2 class="section-title">Play Fruit Matching Directly in Browser!</h2>
+      <p class="section-subtitle">Tap free tiles to move them to the tray, match 2 identical fruits to burst!</p>
+    </div>
+
+    <div class="minigame-container glass-panel">
+      <div class="minigame-header">
+        <div class="game-stat-pill">Score: <span id="demoScore">300</span></div>
+        <div class="game-stat-pill">Combo: <span id="demoCombo">-</span></div>
+        <div class="game-stat-pill">IQ: <span id="demoIQ">70</span></div>
+        <button id="resetDemoBtn" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">🔄 Reset Demo</button>
+      </div>
+
+      <div class="felt-board">
+        <div id="demoTilesGrid" class="tiles-grid">
+          <!-- Generated dynamically via app.js -->
+        </div>
+      </div>
+
+      <!-- 4 Tray slots matching game header 3/4 -->
+      <div class="tray-bar">
+        <div class="tray-slot"></div>
+        <div class="tray-slot"></div>
+        <div class="tray-slot"></div>
+        <div class="tray-slot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section matching gameplay -->
+  <section id="features" class="features-section">
+    <div class="section-header">
+      <span class="section-tag">GAME FEATURES</span>
+      <h2 class="section-title">Why Play Crash Tiles?</h2>
+      <p class="section-subtitle">Vibrant fruit varieties, smooth animations, and exciting time bonus mechanics.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">🍐</div>
+        <h3 class="feature-title">Fresh Fruits & Produce</h3>
+        <p class="feature-desc">Layered 3D tiles filled with pears, avocados, watermelons, cucumbers, bananas, and chili peppers.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">⚡</div>
+        <h3 class="feature-title">+1 Extra Time Bonus</h3>
+        <p class="feature-desc">Match special +1 produce tiles to add precious seconds back onto your countdown timer.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">🟣</div>
+        <h3 class="feature-title">Secret Facedown Tiles</h3>
+        <p class="feature-desc">Tap glowing purple facedown tiles to reveal mystery fruits underneath.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">🧠</div>
+        <h3 class="feature-title">Dynamic IQ Score</h3>
+        <p class="feature-desc">Track your IQ score in real-time based on speed and accuracy, scaling up to 200.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">🔀</div>
+        <h3 class="feature-title">Shuffle & Undo Boosters</h3>
+        <p class="feature-desc">Use 2 Shuffles and 2 Undos per level when you need a tactical escape plan.</p>
+      </div>
+
+      <div class="feature-card glass-panel">
+        <div class="feature-icon-wrapper">⏱️</div>
+        <h3 class="feature-title">Race Against Time</h3>
+        <p class="feature-desc">Clear all tiles from the green felt board before the timer bar runs out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Play Section -->
+  <section id="howtoplay" class="howtoplay-section">
+    <div class="section-header">
+      <span class="section-tag">TUTORIAL</span>
+      <h2 class="section-title">How to Play</h2>
+      <p class="section-subtitle">5 simple steps to master fruit tile matching.</p>
+    </div>
+
+    <div class="steps-container">
+      <div class="step-card glass-panel">
+        <div class="step-number">1</div>
+        <div class="step-icon">⭐</div>
+        <h3 class="step-title">Score Points</h3>
+        <p class="step-desc">Multiply your score with every matched fruit pair.</p>
+      </div>
+
+      <div class="step-card glass-panel">
+        <div class="step-number">2</div>
+        <div class="step-icon">🚩</div>
+        <h3 class="step-title">Advance Levels</h3>
+        <p class="step-desc">Clear the board starting from Level 1 to unlock challenges.</p>
+      </div>
+
+      <div class="step-card glass-panel">
+        <div class="step-number">3</div>
+        <div class="step-icon">🧠</div>
+        <h3 class="step-title">Boost IQ</h3>
+        <p class="step-desc">Fast and flawless matches increase your IQ score.</p>
+      </div>
+
+      <div class="step-card glass-panel">
+        <div class="step-number">4</div>
+        <div class="step-icon">⏱️</div>
+        <h3 class="step-title">Extend Time</h3>
+        <p class="step-desc">Match +1 bonus tiles to gain extra seconds.</p>
+      </div>
+
+      <div class="step-card glass-panel">
+        <div class="step-number">5</div>
+        <div class="step-icon">👆</div>
+        <h3 class="step-title">Manage Tray</h3>
+        <p class="step-desc">Keep your 4-slot tray from filling up by matching pairs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Section -->
+  <section class="showcase-banner">
+    <div class="showcase-container glass-panel">
+      <div class="showcase-text">
+        <span class="section-tag">EXQUISITE DESIGN</span>
+        <h2 class="section-title" style="font-size: 2.2rem; margin-top: 10px;">Juicy & Relaxing Puzzle</h2>
+        <p class="section-subtitle" style="margin-bottom: 24px;">
+          Crafted with dark green felt board aesthetics, polished white tiles, and vibrant fruit icons for iOS.
+        </p>
+        <a href="https://apps.apple.com" target="_blank" rel="noopener" class="btn-primary">
+          Download Crash Tiles Now
+        </a>
+      </div>
+      <div class="showcase-img-wrapper">
+        <img src="../assets/fruit_mockup.jpg" alt="Crash Tiles Fruit Gameplay Graphics">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="../assets/icon.png" alt="Crash Tiles Logo">
+        <span>Crash Tiles</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="support.html">Support (EN)</a></li>
+        <li><a href="../tr/support.html">Destek (TR)</a></li>
+        <li><a href="privacy.html">Privacy Policy (EN)</a></li>
+        <li><a href="../tr/privacy.html">Gizlilik Politikası (TR)</a></li>
+        <li><a href="https://github.com/hdurmus/tamgatiles/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+      </ul>
+      <p class="footer-copyright">
+        © 2026 Crash Tiles. All rights reserved. Designed with ❤️ for iOS.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
